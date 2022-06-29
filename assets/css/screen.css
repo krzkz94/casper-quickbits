@@ -34,9 +34,7 @@ production stylesheet in assets/built/screen.css
 @import "general/variables.css";
 
 
-body { 
-    transition: background-color 0.3s var(--animation-base);
-}
+
 
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
@@ -245,7 +243,7 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     left: 0;
     z-index: 2000;
     background-color: transparent;
-    color: #fff;
+    /* color: #fff; */
 }
 
 .gh-head a {
@@ -283,9 +281,9 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     margin-top: -2px;
 }
 
-.has-cover .gh-head-logo {
+/* .has-cover .gh-head-logo {
     color: #fff;
-}
+} */
 
 .no-logo .gh-head-logo {
     display: none;
@@ -347,7 +345,6 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 
 .gh-social-link {
     line-height: 0;
-    color: #fff;
 }
 
 .gh-social-link:hover {
@@ -381,10 +378,10 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     background: var(--ghost-accent-color);
 }
 
-.has-cover .gh-head-button {
+/* .has-cover .gh-head-button {
     color: var(--color-darkgrey);
     background: #fff;
-}
+} */
 
 
 /* Mobile Menu Trigger
@@ -405,9 +402,9 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     height: 33px;
 }
 
-.has-cover .gh-burger-box {
+/* .has-cover .gh-burger-box {
     color: #fff;
-}
+} */
 
 .gh-burger-inner {
     width: 100%;
@@ -554,6 +551,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .gh-head-open #gh-head .gh-head-menu {
         display: flex;
     }
+
+    .has-cover.gh-head-open .gh-head {
+        background: #fff;
+    }    
 }
 
 @media (max-width: 600px) {
@@ -562,9 +563,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
-.has-cover.gh-head-open .gh-head {
-    background: var(--ghost-accent-color);
-}
 
 
 /* 6. Post Feed
@@ -1753,9 +1751,19 @@ html.dark-mode figcaption a {
     color: #fff;
 }
 
-html.dark-mode .gh-head {
+html.dark-mode .gh-head, 
+html.dark-mode .gh-head a {
     background: var(--color-darkmode);
     color: #fff;
+}
+
+html.dark-mode .gh-head a.gh-head-button {
+    background: #fff;
+    color: var(--color-darkmode);
+}
+
+html.dark-mode .has-cover.gh-head-open .gh-head {
+    background: var(--color-darkmode);
 }
 
 html.dark-mode .gh-burger-box {
