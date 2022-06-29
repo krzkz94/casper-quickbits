@@ -238,11 +238,6 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     background-color: #fff;
 }
 
-.has-cover:not(.home-template) .gh-head {
-    background-color: var(--ghost-accent-color);
-    color: #fff;
-}
-
 .home-template.has-cover .gh-head {
     position: absolute;
     top: 0;
