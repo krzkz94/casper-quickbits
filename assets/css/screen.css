@@ -1067,7 +1067,7 @@ is the very first element in the post content */
 
 /* Add a small margin between a heading and anything after it */
 .gh-content > [id] + * {
-    margin-top: 1.5rem !important;
+    margin-top: 1.5rem;
 }
 
 /* A larger margin before/after HRs and blockquotes */
@@ -2103,6 +2103,229 @@ html.dark-mode .footer-cta-title {
     
     html.auto-color .footer-cta-title {
         color: #fff;
+    }
+}
+
+/*
+    Table of Content default styles
+*/
+.toc{
+    overflow-y:auto
+}
+.toc>.toc-list{
+    overflow:hidden;
+    position:relative
+}
+.toc>.toc-list li{
+    list-style:none
+}
+.toc-list{
+    margin:0;
+    padding-left:10px
+}
+a.toc-link{
+    color:currentColor;
+    height:100%
+}
+.is-collapsible{
+    max-height:1000px;
+    overflow:hidden;
+    transition:all 300ms ease-in-out
+}
+.is-collapsed{
+    max-height:0
+}
+.is-position-fixed{
+    position:fixed !important;
+    top:0
+}
+.is-active-link{
+    font-weight:700
+}
+
+/* 
+    Ghost Table of Contents Styles
+*/
+.gh-content {
+    position: relative;
+}
+
+.gh-content-line {
+    display: block;
+    grid-column: wide-start / wide-end;
+    width: 100%;
+    border-color: var(--color-base);
+    opacity: 0.1;
+}
+
+.gh-content-line-white {
+    border-color: #fff;
+}
+
+.gh-content-side {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    grid-row-start: 1;
+    grid-column: wide-start / main-start;
+    width: 100%;
+    padding: 0 8vmin 0 0;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.gh-sticky-sidebar {
+    position: sticky;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 80px);
+}
+
+.gh-toc {
+    align-self: stretch;
+    padding: 1px 0 6vmin;
+    overflow-y: auto;
+}
+
+.gh-toc strong {
+    display: flex;
+    align-items: center;
+    margin: 0 30px 10px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.toc {
+    overflow-y: auto;
+    font-size: 1.4rem;
+}
+
+.toc > .toc-list {
+    position: relative;
+    overflow: hidden;
+}
+
+.toc > .toc-list li {
+    list-style: none;
+}
+
+.toc > .toc-list li a {
+    text-decoration: none;
+}
+
+.toc-list {
+    margin: 0;
+}
+
+.toc-list-item {
+    position: relative;
+}
+
+a.toc-link {
+    position: relative;
+    display: inline-flex;
+    height: 100%;
+    padding: 6px 0;
+    font-weight: 400;
+    line-height: 1.2em;
+    color: var(--color-midgrey);
+}
+
+a.toc-link:hover {
+    color: var(--color-base);
+}
+
+/* CTA in sticky sidebar */
+.gh-sidebar-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4vmin 0 0;
+    color: var(--color-gray);
+}
+
+.gh-sidebar-cta .gh-button.gh-button-primary {
+    padding: 0 6rem;
+}
+
+.gh-sidebar-cta .gh-cta-pretitle {
+    margin: 3vmin 0 0.5em;
+}
+
+.gh-sidebar-cta p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.toc > .toc-list, .toc > .toc-list > li {
+    padding: 0;
+}
+
+.gh-content > .gh-content-side {
+    margin-top: 0;
+}
+
+a.is-active-link {
+    color: var(--color-base);
+    font-weight: 500;
+}
+
+@media (max-width: 1400px) {
+    .gh-content-side {
+        position: static;
+        grid-column: main-start / main-end;
+        padding: 0;
+        margin: 0 0 6vmin;
+    }
+
+    a.toc-link-intro {
+        display: none !important;
+    }
+
+    .gh-toc {
+        width: 100%;
+        padding: 30px;
+        overflow-y: scroll;
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow:
+            0 10px 50px rgb(25 37 52 / 14%),
+            0 2px 5px rgb(25 37 52 / 3%);
+    }
+
+    .gh-canvas .toc-list {
+        font-size: 1.7rem;
+    }
+
+    a.toc-link {
+        padding: 0.6em 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .gh-toc {
+        min-height: auto;
+    }
+
+    .gh-content {
+        grid-row-start: 2;
+    }
+
+    .gh-content-side {
+        grid-row-start: 1;
+        margin-bottom: 6vmin;
+    }
+
+    .gh-sidebar-cta {
+        margin-top: 6vmin;
+    }
+}
+
+@media (max-width: 600px) {
+    .gh-canvas .toc-list {
+        font-size: 1.5rem;
     }
 }
 

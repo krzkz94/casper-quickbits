@@ -82,8 +82,17 @@ into the {body} tag of the default.hbs template --}}
 
     </header>
 
-    <section class="gh-content gh-canvas">
+    <section class="gh-content gh-canvas">        
         {{content}}
+
+        <div class="gh-content-side">
+            <div class="gh-sticky-sidebar">
+                <div class="gh-toc">
+                    <strong>On this page</strong>
+                    <div class="toc"></div> {{! The TOC will be inserted here }}
+                </div>
+            </div>
+        </div>
     </section>
 
     {{!--

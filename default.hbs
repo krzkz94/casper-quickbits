@@ -13,6 +13,13 @@
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css"> --}}
+
+    <script>
+        if (localStorage.getItem('qb_dark') == 'true') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
@@ -99,6 +106,20 @@ $(document).ready(function () {
 });
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+{{! Initialize Tocbot after you load the script }}
+<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.gh-content',
+        // Which headings to grab inside of the contentSelector element.
+        ignoreSelector: '.js-toc-ignore, .gh-post-upgrade-cta h2, .article-title',
+
+        headingSelector: 'h1, h2, h3, h4',
+    });
+</script>
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
 
